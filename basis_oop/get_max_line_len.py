@@ -1,7 +1,7 @@
 from typing import * 
 
 
-def get(target:List[str]):
+def get(target:List[str])->int:
     max_line_length = 0
     i:str
     for i in target:

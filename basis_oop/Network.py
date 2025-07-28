@@ -4,6 +4,7 @@ from Connection import Connection
 from Neuron import Neuron
 from DataUnit import DataUnit
 
+import equalize_list_of_string
 
 class Network:
     def __init__(self):
@@ -15,11 +16,20 @@ class Network:
     
     def __str__(self):
         lines:List[str] = []
-        W:List[int] = []
+        Q:List[Neuron]
+        for Q in [self.input_neurons] + self.mid_neurons + [self.output_neurons]:
+            for i in range(len(Q)):
+                if i == len(lines):
+                    lines.append("")
+                lines[i] += "  " + Q[i].__str__()
+            equalize_list_of_string.equalize(target=lines)
+        output = ""
+        for i in lines:
+            output += i + "\n"
         
-        for i in range(len(self.input_neurons)):
-            lines.append("")
-            lines[i] += self.input_neurons.__str__()
+        return output
+
+        
 
         
         

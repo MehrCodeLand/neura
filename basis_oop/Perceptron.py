@@ -16,7 +16,7 @@ class Perceptron(Network):
         Network.__init__(self)
         #input neurons 
         for i in range(input_size):
-            the_neuron:Neuron = Neuron(title="input_"+generate_readble_random_string.generate())
+            the_neuron:Neuron = Neuron(title="input_"+f"{i}")
             self.input_neurons.append(the_neuron)
 
         #core neuron 

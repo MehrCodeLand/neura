@@ -23,18 +23,27 @@ class Network:
                     lines.append("")
                 lines[i] += "  " + Q[i].__str__()
             equalize_list_of_string.equalize(target=lines)
-        output = ""
+
+
+
+        output = "Neurons:\n"
         for i in lines:
             output += i + "\n"
+
+
+        output += "Connections:\n"
+        c:Connection
+        counter = 0 
+        for c in self.connections:
+            counter += 1
+            output += c.__str__() + "  "
+            if counter % 4 == 0:
+                output += "\n"
+
+        
         
         return output
 
-        
-
-        
-        
-
-        
 
 
     def clear_output(self)->None:
@@ -74,6 +83,10 @@ class Network:
         i:int
         for i in range(len(data_unit.inputs)):
             self.input_neurons[i].output = data_unit.inputs[i]
+
+
+    
+    def 
 
             
 

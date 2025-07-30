@@ -35,10 +35,27 @@ class Perceptron(Network):
 
         #making core to output connection
         core_to_output_connection:Connection = Connection(from_=core, to_=output_neuron)
+        core_to_output_connection.weight = 1
         self.connections.append(core_to_output_connection)
 
 
         #done making perceptron 
+
+
+
+    def predict(self, data_unit)->None:
+        """
+        pick the output from output neuron 
+        """
+        #first clear the outputs
+        self.clear()
+
+        layer:List[Neuron]
+        layers:List[layer] = self.get_layers()
+        
+
+
+
 
 
 

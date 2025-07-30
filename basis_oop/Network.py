@@ -84,10 +84,40 @@ class Network:
         for i in range(len(data_unit.inputs)):
             self.input_neurons[i].output = data_unit.inputs[i]
 
+    #getting layers 
+    def get_layers(self)->List[List[Neuron]]:
+        #output will be from input to output
+        output:List[List[Neuron]] = []
+        return [self.input_neurons]+self.mid_neurons+[self.output_neurons] 
+    
+
+    #getting connections ==============
+    def get_connections_to(self, to:Neuron)->List[Connection]:
+        
+
+
+
+    def get_input_connections(self)->List[Connection]:
+        output:List[Connection] = []
+        c:Connection
+        for c in self.connections:
+            if self.input_neurons.__contains__(c.from_):
+                output.append(c)
+        return output
+    
+
+    def get_output_connections(self)->List[Connection]:
+        output:List[Connection] = []
+        c:Connection
+        for c in self.connections:
+            if self.output_neurons.__contains__(c.to_):
+                output.append(c)
+        return output
+
+
+
 
     
-    def 
-
             
 
 

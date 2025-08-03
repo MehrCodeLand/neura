@@ -43,15 +43,24 @@ class Perceptron(Network):
 
 
 
-    def predict(self, data_unit)->None:
-        """
-        pick the output from output neuron 
-        """
-        #first clear the outputs
-        self.clear()
+    
 
-        layer:List[Neuron]
-        layers:List[layer] = self.get_layers()
+                    
+
+        
+
+
+if __name__ == "__main__":
+    dataset:List[DataUnit] = [ #AND gate 
+        DataUnit(inputs=[1.0, 1.0], expected_outs=[1.0]),#first argument is the inputs ; #second argument is the expected outputs
+        DataUnit(inputs=[1.0, 0.0], expected_outs=[0.0]),
+        DataUnit(inputs=[0.0, 1.0], expected_outs=[0.0]),
+        DataUnit(inputs=[0.0, 0.0], expected_outs=[0.0])
+        ]
+    p = Perceptron(input_size=2)
+    print("started")
+    p.predict(dataset[0])
+
         
 
 
@@ -66,13 +75,4 @@ class Perceptron(Network):
 
 
 
-if __name__ == "__main__":
-    dataset:List[DataUnit] = [ #AND gate 
-        DataUnit([1.0, 1.0],[1.0]),#first argument is the inputs ; #second argument is the expected outputs
-        DataUnit([1.0, 0.0],[0.0]),
-        DataUnit([0.0, 1.0],[0.0]),
-        DataUnit([0.0, 0.0],[0.0])
-    ]
 
-    p = Perceptron(2)
-    print(p)

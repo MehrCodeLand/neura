@@ -11,4 +11,4 @@ class Connection:
 
 
     def __str__(self)->str:
-        return f"<{self.from_.title}->{self.to_.title} {self.weight}>"
+        return f"<{self.from_.title} {self.to_.title} {self.weight}>"
